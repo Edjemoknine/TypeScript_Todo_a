@@ -1,38 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+  min-height: 100vh;
+  width: 100vw;
+  background: rgb(0, 119, 255);
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
+}
+button {
+  position: absolute;
+  right: 0.2rem;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: white;
+  background-color: blue;
+  border: none;
+  outline: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+input {
+  width: 100%;
+  border-radius: 50px;
+  background: white;
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+}
+.remove {
+  background: orangered;
+}
+input:focus {
+  box-shadow: 0 10px 10px 1000px rgba(0, 0, 0, 0.5);
+}
+.icon {
+  cursor: pointer;
+}
+.todocard {
+  display: flex;
+  background-color: rgb(255, 234, 0);
+  padding: 1rem;
+  margin: 10px;
+  border-radius: 10px;
+}
+.todocard:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.todocard input {
+  flex: 1;
+}
+.todocard .text {
+  flex: 1;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TodoList {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: rgb(0, 255, 242);
+  border-radius: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.remove {
+  background: orangered;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.todo_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(10, 4, 71);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1FR 1Fr;
+  gap: 1rem;
+}
+@media screen and (max-width: 776px) {
+  .todocard {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+  .container {
+    grid-template-columns: 1fr;
   }
 }
